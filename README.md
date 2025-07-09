@@ -26,5 +26,6 @@ git clone https://github.com/BrayTheCSMajor101/powershell-react-app.git
 cd powershell-react-app
 npm install
 npm start
+
 Contributions & Learning
 Built as a junior computer science major to explore AI integration, frontend frameworks, and cybersecurity fundamentals — while making learning fun
