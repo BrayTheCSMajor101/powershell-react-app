@@ -1,0 +1,612 @@
+/* Main body and background */
+body {
+    margin: 0;
+    font-family: 'Fira Code', monospace;
+    background-color: #0f0f0f;
+    color: #e0e0e0;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Matrix Background */
+.matrix-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* App Container */
+.powershell-app {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: 1;
+    overflow-x: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+    flex-shrink: 0;
+    background: rgba(18, 18, 18, 0.95);
+    color: #f0f0f0;
+    min-width: 300px;
+    max-width: 300px;
+    padding: 1.5rem;
+    border-right: 2px solid #292929;
+    overflow-y: auto;
+    z-index: 2;
+    position: relative;
+}
+
+.sidebar h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #00b7ff;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.sidebar li {
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+    transition: all 0.3s ease;
+}
+
+.sidebar li:hover {
+    transform: scale(1.02);
+    color: #00ffcc;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #00b7ff;
+}
+
+.sidebar a:hover {
+    color: #00ffcc;
+}
+
+/* Terminal Styles */
+.terminal {
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(24, 24, 24, 0.95);
+    z-index: 1;
+    position: relative;
+    overflow-y: auto;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+}
+.terminal::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80px;
+    height: 100%;
+    background: linear-gradient(to left, rgba(24, 24, 24, 0.95), transparent);
+    pointer-events: none;
+    z-index: 2;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+}
+
+.title {
+    font-size: 1.8rem;
+    color: #00b7ff;
+    margin-bottom: 1rem;
+}
+
+.terminal-window {
+    background-color: #1e1e1e;
+    flex-grow: 1;
+    padding: 1rem;
+    border: 1px solid #333;
+    border-radius: 10px;
+    overflow-y: auto;
+    overflow-x: hidden; /* prevent horizontal scroll */
+    word-wrap: break-word;
+    word-break: break-word; /* force breaking long lines */
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 10px rgba(0, 183, 255, 0.2);
+}
+
+.terminal-line {
+    white-space: pre-wrap; /* wrap long lines */
+    word-wrap: break-word;
+    word-break: break-word;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+    color: #c5e1a5;
+    animation: fadeIn 0.3s ease-in-out;
+    max-width: 100%;
+}
+
+.terminal-input {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.prompt {
+    color: #00ff00;
+    margin-right: 0.5rem;
+    font-weight: bold;
+}
+
+.terminal-input input {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    border: 1px solid #444;
+    outline: none;
+    flex-grow: 1;
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 0.4rem 0.6rem;
+    border-radius: 4px;
+    transition: border 0.3s ease;
+}
+
+.terminal-input input:focus {
+    border: 1px solid #00b7ff;
+    box-shadow: 0 0 6px rgba(0, 183, 255, 0.4);
+}
+
+/* Tutorial & Panels */
+.tutorial-box {
+    background-color: #222;
+    color: #ddd;
+    border: 1px solid #444;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-top: 1rem;
+    box-shadow: 0 0 12px rgba(0, 255, 204, 0.15);
+    animation: slideIn 0.4s ease-out;
+}
+
+.tutorial-box h3 {
+    color: #00ffcc;
+    margin-top: 0;
+}
+
+.tutorial-box summary {
+    cursor: pointer;
+    color: #00b7ff;
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+    padding: 5px 0;
+}
+
+.tutorial-box details {
+    margin-bottom: 0.5rem;
+    background-color: #2a2a2a;
+    padding: 0.5rem;
+    border-radius: 6px;
+}
+
+/* GPT Assistant Chat UI */
+.gpt-assistant {
+    position: fixed;
+    top: 40px;
+    right: 20px;
+    width: 320px;
+    background-color: rgba(0, 0, 0, 0.92);
+    border: 1px solid #00b7ff;
+    border-radius: 12px;
+    padding: 1rem;
+    z-index: 9999;
+    color: #fff;
+    font-family: 'Fira Code', monospace;
+    box-shadow: 0 0 10px rgba(0, 183, 255, 0.5);
+}
+
+.gpt-assistant input {
+    width: 100%;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 4px;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    background: #222;
+    color: #fff;
+}
+
+.gpt-assistant button {
+    width: 100%;
+    padding: 0.4rem;
+    background-color: #00b7ff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.gpt-log .user {
+    color: #0f0;
+}
+
+.gpt-log .bot {
+    color: #0af;
+}
+
+.gpt-log {
+    padding: 12px;
+    max-height: 300px; /* You can increase this if you want */
+    overflow-y: auto;
+    overflow-x: hidden;
+    font-family: monospace;
+    background-color: #1e1e1e;
+    border: 2px solid limegreen;
+    border-radius: 8px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.gpt-log .user {
+    color: #00ff00;
+    background: rgba(0, 255, 0, 0.1);
+    padding: 8px;
+    border-radius: 6px;
+    margin: 6px 0;
+}
+
+.gpt-log .bot {
+    color: #00bfff;
+    background: rgba(0, 191, 255, 0.1);
+    padding: 8px;
+    border-radius: 6px;
+    margin: 6px 0;
+}
+.typing {
+    font-style: italic;
+    color: #00bfff;
+    margin-top: 10px;
+}
+
+.typing::after {
+    content: "";
+    display: inline-block;
+    width: 1ch;
+    animation: blink-dots 1s steps(3, end) infinite;
+    overflow: hidden;
+    vertical-align: bottom;
+    color: #00bfff;
+}
+
+@keyframes blink-dots {
+    0% { width: 0; }
+    33% { width: 1ch; }
+    66% { width: 2ch; }
+    100% { width: 3ch; }
+}
+
+.clear-chat {
+    margin-top: 10px;
+    background: #222;
+    border: 1px solid limegreen;
+    padding: 6px 10px;
+    border-radius: 4px;
+    color: limegreen;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.clear-chat:hover {
+    background-color: limegreen;
+    color: black;
+}
+.gpt-section {
+    overflow-y: auto;
+    padding: 15px 25px;;
+    background: rgba(17, 17, 17, 0.55); /* see-through */
+    backdrop-filter: blur(3px);         /* glass effect */
+    border: 2px solid #00ff00;
+    border-radius: 40px;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    box-shadow: 0 0 25px limegreen;
+    position: relative;
+    box-sizing: border-box; /* 👈 also helps with spacing */
+}
+.model-display {
+    color: #0f0;
+    font-family: monospace;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+.model-display span {
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+
+.chat-bubble {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.chat-bubble.user {
+    flex-direction: row-reverse;
+}
+
+.message {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 10px 12px;
+    border-radius: 10px;
+    max-width: 70%;
+    font-family: monospace;
+    color: #fff;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin: 10px 0;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #00ff00;
+    background: #111;
+    margin: 0 10px;
+}
+.hacking-guide {
+    background: rgba(0, 0, 0, 0.85);
+    border: 2px solid #00ff00;
+    border-radius: 12px;
+    padding: 16px;
+    margin-top: 20px;
+    box-shadow: 0 0 15px limegreen;
+    animation: glowFade 3s infinite alternate;
+}
+
+.hacking-guide summary {
+    font-weight: bold;
+    color: #00ff00;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.hacking-guide details p {
+    margin-top: 8px;
+    color: #aaffaa;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    background-color: rgba(0, 255, 0, 0.05);
+    padding: 0.5rem;
+    border-left: 4px solid limegreen;
+    border-radius: 6px;
+    font-family: 'Fira Code', monospace;
+}
+
+@keyframes glowFade {
+    0% {
+        box-shadow: 0 0 6px limegreen;
+    }
+    100% {
+        box-shadow: 0 0 20px #00ff00;
+    }
+}
+/* ===== THEME OVERRIDES ===== */
+.theme-matrix {
+    --bg-main: #0f0f0f;
+    --color-text: #00ff00;
+    --accent: limegreen;
+    --rain-color: #00ff00;
+}
+
+.theme-cyberblue {
+    --bg-main: #0a0a1a;
+    --color-text: #00b7ff;
+    --accent: #0099ff;
+    --rain-color: #00b7ff;
+}
+
+.theme-redhack {
+    --bg-main: #1a0000;
+    --color-text: #ff4d4d;
+    --accent: #ff0000;
+    --rain-color: #ff4d4d;
+}
+
+/* Apply theme variables */
+body {
+    background-color: var(--bg-main);
+    color: var(--color-text);
+}
+
+.terminal-window,
+.terminal-input input,
+.tutorial-box,
+.sidebar,
+.gpt-section,
+.gpt-log {
+    border-color: var(--accent);
+    color: var(--color-text);
+}
+.theme-neonblue {
+    background: #000;
+    color: #00f6ff;
+    --rain-color: #00f6ff;
+}
+
+.theme-matrixred {
+    background: #000;
+    color: #ff0033;
+    --rain-color: #ff0033;
+}
+
+.theme-darkpurple {
+    background: #0d001a;
+    color: #e600ff;
+    --rain-color: #e600ff;
+}
+
+.theme-slategray {
+    background: #1c1c1c;
+    color: #c0c0c0;
+    --rain-color: #c0c0c0;
+}
+.theme-hackerorange {
+    --rain-color: orange;
+    background-color: #1a1a1a;
+    color: orange;
+}
+
+.theme-terminalwhite {
+    --rain-color: #cccccc;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.theme-mintgreen {
+    --rain-color: #90ee90;
+    background-color: #001f1f;
+    color: #90ee90;
+}
+
+.theme-iceblue {
+    --rain-color: #aeefff;
+    background-color: #001d2e;
+    color: #aeefff;
+}
+
+.theme-nightmode {
+    --rain-color: #c0c0c0;
+    background-color: #0d0d0d;
+    color: #c0c0c0;
+}
+
+.gpt-input-row input[type="text"] {
+    flex-grow: 1;
+    padding: 0.5rem;
+    font-family: 'Fira Code', monospace;
+    background-color: #111;
+    color: #0f0;
+    border: 1px solid limegreen;
+    border-radius: 6px;
+}
+
+.gpt-input-row button {
+    background-color: limegreen;
+    color: black;
+    font-weight: bold;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.gpt-input-row button:hover {
+    background-color: #00ff00;
+}
+.terminal::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+.terminal {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+}
+.typing-text {
+    display: inline-block;
+    white-space: pre-wrap;
+    word-break: break-word;
+    border-right: 2px solid limegreen;
+    animation: blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: limegreen }
+}
+.message p {
+    margin: 0;
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow: hidden;
+    flex-grow: 1;
+    max-width: 100%;
+}
+.minigame-modal {
+    background: rgba(0, 0, 0, 0.95);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.minigame-content {
+    background: #111;
+    color: lime;
+    padding: 2rem;
+    border: 2px solid limegreen;
+    border-radius: 10px;
+    min-width: 350px;
+}
+
+.hint {
+    font-size: 0.85rem;
+    color: #bbb;
+    margin-top: 0.3rem;
+}
+
+.minigame-modal select {
+    padding: 4px 8px;
+    margin-left: 8px;
+    background: black;
+    color: limegreen;
+    border: 1px solid limegreen;
+    border-radius: 4px;
+}
+
+
+
+
+
+
+

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="fa396518-146a-498c-b1bf-a7153a2be282" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExportToHTMLSettings">
+    <option name="printScope" value="4" />
+    <option name="PRINT_LINE_NUMBERS" value="true" />
+    <option name="OUTPUT_DIRECTORY" value="D:/" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JSX File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2vFVdI8Xuy4q3TeEjPCYfZgWoK4" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Brbla/OneDrive/Documents/WebstormProjects/brayfirstapp&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.npm start.executor&quot;: &quot;Run&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2024.3.5\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Brbla\OneDrive\Documents" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Brbla\WebstormProjects\untitled3\public" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.npm start">
+    <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
+      <method v="2" />
+    </configuration>
+    <configuration name="npm start" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-WS-251.23774.424" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fa396518-146a-498c-b1bf-a7153a2be282" name="Changes" comment="" />
+      <created>1743740894163</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1743740894163</updated>
+      <workItem from="1743740895224" duration="5096000" />
+      <workItem from="1743746858924" duration="1721000" />
+      <workItem from="1743748801994" duration="2508000" />
+      <workItem from="1743751572346" duration="4298000" />
+      <workItem from="1743781475819" duration="170000" />
+      <workItem from="1743781896799" duration="394000" />
+      <workItem from="1743794293289" duration="1763000" />
+      <workItem from="1744040490716" duration="1154000" />
+      <workItem from="1744132073779" duration="3482000" />
+      <workItem from="1744233101529" duration="51000" />
+      <workItem from="1744234826154" duration="136000" />
+      <workItem from="1744235913437" duration="112000" />
+      <workItem from="1744400446052" duration="139000" />
+      <workItem from="1744602809533" duration="6476000" />
+      <workItem from="1744735844834" duration="5337000" />
+      <workItem from="1744764965696" duration="3598000" />
+      <workItem from="1744838890892" duration="5066000" />
+      <workItem from="1744993724356" duration="344000" />
+      <workItem from="1745253647593" duration="33000" />
+      <workItem from="1745253763229" duration="24000" />
+      <workItem from="1745253883085" duration="299000" />
+      <workItem from="1745254195628" duration="39000" />
+      <workItem from="1745254236527" duration="182000" />
+      <workItem from="1745257068271" duration="321000" />
+      <workItem from="1745258222597" duration="7000" />
+      <workItem from="1745258236322" duration="261000" />
+      <workItem from="1745258846333" duration="1276000" />
+      <workItem from="1745269222079" duration="6573000" />
+      <workItem from="1745339748430" duration="1694000" />
+      <workItem from="1745343231630" duration="2924000" />
+      <workItem from="1745426252625" duration="526000" />
+      <workItem from="1745440666034" duration="4249000" />
+      <workItem from="1745463771887" duration="15346000" />
+      <workItem from="1745479321067" duration="198000" />
+      <workItem from="1745479530099" duration="3291000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
